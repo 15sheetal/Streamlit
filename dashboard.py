@@ -10,7 +10,7 @@ st.set_page_config(page_title='ONLINE SHOPPING', layout='wide', page_icon="tshir
 st.title(":tshirt: :blue[ONLINE SHOPPING] :tshirt:")
 df=pd.read_csv('shopping_behavior_updated (1).csv')
 with st.sidebar:
-    selected = option_menu(menu_title="Main Menu",options=["📁Data", "📈Charts", "📊Bar1","📊Bar2","☑️Conclusion"],icons=["black_right_pointing_double_triangle_with_vertical_bar","bar","bar","bar","bar"]
+    selected = option_menu(menu_title="Main Menu",options=["📁Data", "📈Charts", "📊Bar1","📊Bar2","☑️Conclusion"],icons=["stopwatch","bar","bar","bar","bar"]
                        ,menu_icon="house",default_index=0)
 
 
