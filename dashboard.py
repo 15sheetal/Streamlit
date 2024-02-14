@@ -8,7 +8,7 @@ import cufflinks
 
 st.set_page_config(page_title='ONLINE SHOPING', layout='wide', page_icon="tshirt")
 st.title(":tshirt: :blue[ONLINE SHOPING] :tshirt:")
-df=pd.read_csv('C:/Users/DSAI/Desktop/project/shopping_behavior_updated (1).csv')
+df=pd.read_csv('shopping_behavior_updated (1).csv')
 with st.sidebar:
     selected = option_menu(menu_title="Main Menu",options=["Data", "Charts", "Bar1","Bar2","Conclusion"],icons=["bar","bar","bar","bar","bar"]
                        ,menu_icon="cast",default_index=0)
@@ -19,7 +19,7 @@ if selected=="Data":
     st.subheader("Description")
     st.markdown('The Consumer Behavior and Shopping Habits Dataset is a robust collection of consumer information crucial for market analysis and tailored marketing strategies. It covers Customer IDs for identification, Age and Gender for demographics, and Purchase Amount in USD for transaction value. Details like Item Purchased, Category, and Location provide insights into product preferences and regional trends. Size, Color, and Season data cater to specific consumer choices.')
     st.subheader("Data")
-    df=pd.read_csv('C:/Users/DSAI/Desktop/project/shopping_behavior_updated (1).csv')
+    df=pd.read_csv('shopping_behavior_updated (1).csv')
     df
 if selected=="Charts":
     col1,col2=st.columns(2)
