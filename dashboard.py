@@ -11,7 +11,7 @@ st.title(":tshirt: :blue[ONLINE SHOPPING] :tshirt:")
 df=pd.read_csv('shopping_behavior_updated (1).csv')
 with st.sidebar:
     selected = option_menu(menu_title="Main Menu",options=["📁Data", "📈Charts", "📊Bar1","📊Bar2","☑️Conclusion"],icons=["bar","bar","bar","bar","bar"]
-                       ,menu_icon="cast",default_index=0)
+                       ,menu_icon="house",default_index=0)
 
 
 
