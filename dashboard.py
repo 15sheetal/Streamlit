@@ -7,7 +7,7 @@ import cufflinks
 
 
 st.set_page_config(page_title='ONLINE SHOPING', layout='wide', page_icon="tshirt")
-st.title(":tshirt: :blue[ONLINE SHOPING] :tshirt:")
+st.title(":tshirt: :blue[ONLINE SHOPPING] :tshirt:")
 df=pd.read_csv('shopping_behavior_updated (1).csv')
 with st.sidebar:
     selected = option_menu(menu_title="Main Menu",options=["Data", "Charts", "Bar1","Bar2","Conclusion"],icons=["bar","bar","bar","bar","bar"]
@@ -30,7 +30,7 @@ if selected=="Charts":
        color_discrete_sequence=px.colors.qualitative.Antique,width=350)
         st.plotly_chart(fig7, use_container_width=True)
     with col2:
-        st.subheader(':green[Pie of Categories oF Shoping]')
+        st.subheader(':green[Pie of Categories of Shoping]')
         fig1 = px.pie(names=df['Category'].value_counts().index, values=df['Category'].value_counts().values,
                        color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
         st.plotly_chart(fig1, use_container_width=True)
