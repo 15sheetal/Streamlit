@@ -15,13 +15,13 @@ with st.sidebar:
 
 
 
-if selected=="Data":
+if selected=="📁Data":
     st.subheader("Description")
     st.markdown('The Consumer Behavior and Shopping Habits Dataset is a robust collection of consumer information crucial for market analysis and tailored marketing strategies. It covers Customer IDs for identification, Age and Gender for demographics, and Purchase Amount in USD for transaction value. Details like Item Purchased, Category, and Location provide insights into product preferences and regional trends. Size, Color, and Season data cater to specific consumer choices.')
     st.subheader("Data")
     df=pd.read_csv('shopping_behavior_updated (1).csv')
     df
-if selected=="Charts":
+if selected=="🥧Charts":
     col1,col2=st.columns(2)
     with col1:
         st.subheader(':green[Bar-Chart of Shopping Season]')
@@ -45,7 +45,7 @@ if selected=="Charts":
                  color='Gender',width=400)
        st.plotly_chart(fig)
      
-if selected=="Bar1":   
+if selected=="📊Bar1":   
        st.subheader(':green[Payment Method of Male/Female]')
        selected_Gender = st.selectbox("Gender", df['Gender'].unique())
        a = df[df['Gender'] == selected_Gender][['Payment Method', 'Purchase Amount (USD)']]
@@ -53,14 +53,14 @@ if selected=="Bar1":
               color_discrete_sequence=px.colors.qualitative.Set2, width=350)
        st.plotly_chart(fig6, use_container_width=True)
 
-if selected=="Bar2":
+if selected=="📊Bar2":
        st.subheader(':green[Item Purchase in Perticular Location]')
        selected_Location = st.selectbox("Location", df['Location'].unique())
        b = df[df['Location'] == selected_Location][['Purchase Amount (USD)', 'Item Purchased']]
        fig6 = px.bar(data_frame=b, x='Item Purchased', y='Purchase Amount (USD)',
               color='Item Purchased', width=350)
        st.plotly_chart(fig6, use_container_width=True)
-if selected=="Conclusion":
+if selected=="🗃️Conclusion":
     st.markdown(':red[Bar-Chart of Shopping Season]')
     st.markdown('Highest shoping done in Spring Season ')
     st.markdown(':red[Pie-chart of Categories oF Shopping]')
