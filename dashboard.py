@@ -6,7 +6,7 @@ import plotly
 import cufflinks
 
 
-st.set_page_config(page_title='ONLINE SHOPING', layout='wide', page_icon="tshirt")
+st.set_page_config(page_title='ONLINE SHOPPING', layout='wide', page_icon="tshirt")
 st.title(":tshirt: :blue[ONLINE SHOPPING] :tshirt:")
 df=pd.read_csv('shopping_behavior_updated (1).csv')
 with st.sidebar:
@@ -24,13 +24,13 @@ if selected=="Data":
 if selected=="Charts":
     col1,col2=st.columns(2)
     with col1:
-        st.subheader(':green[Bar-Chart of Shoping Season]')
+        st.subheader(':green[Bar-Chart of Shopping Season]')
         fig7 = px.bar(data_frame=df, x=df['Season'].value_counts().index,
        y=df['Category'].value_counts().values,
        color_discrete_sequence=px.colors.qualitative.Antique,width=350)
         st.plotly_chart(fig7, use_container_width=True)
     with col2:
-        st.subheader(':green[Pie of Categories of Shoping]')
+        st.subheader(':green[Pie of Categories of Shopping]')
         fig1 = px.pie(names=df['Category'].value_counts().index, values=df['Category'].value_counts().values,
                        color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
         st.plotly_chart(fig1, use_container_width=True)
@@ -61,9 +61,9 @@ if selected=="Bar2":
               color='Item Purchased', width=350)
        st.plotly_chart(fig6, use_container_width=True)
 if selected=="Conclusion":
-    st.markdown(':red[Bar-Chart of Shoping Season]')
+    st.markdown(':red[Bar-Chart of Shopping Season]')
     st.markdown('Highest shoping done in Spring Season ')
-    st.markdown(':red[Pie of Categories oF Shoping]')
+    st.markdown(':red[Pie of Categories oF Shopping]')
     st.markdown('Highest shoping Category is Clothing ')
     st.markdown(':red[Donut Chat of Subscription Status]')
     st.markdown('only 27% have Subscription ')
