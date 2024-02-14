@@ -2,6 +2,8 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 from streamlit_option_menu import option_menu
+import plotly
+import cufflinks
 
 
 st.set_page_config(page_title='ONLINE SHOPING', layout='wide', page_icon="tshirt")
