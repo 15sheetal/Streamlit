@@ -30,13 +30,13 @@ if selected=="Charts":
        color_discrete_sequence=px.colors.qualitative.Antique,width=350)
         st.plotly_chart(fig7, use_container_width=True)
     with col2:
-        st.subheader(':green[Pie of Categories of Shopping]')
+        st.subheader(':green[Pie-chart of Categories of Shopping]')
         fig1 = px.pie(names=df['Category'].value_counts().index, values=df['Category'].value_counts().values,
                        color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
         st.plotly_chart(fig1, use_container_width=True)
     col1,col2=st.columns(2)
     with col1:
-        st.subheader(':green[Donut Chat of Subscription Status]')
+        st.subheader(':green[Donut Chart of Subscription Status]')
         fig2 = px.pie(df, names='Subscription Status',width=300,hole=0.5,color_discrete_sequence=px.colors.qualitative.Set2)
         st.plotly_chart(fig2)
     with col2:
@@ -63,9 +63,9 @@ if selected=="Bar2":
 if selected=="Conclusion":
     st.markdown(':red[Bar-Chart of Shopping Season]')
     st.markdown('Highest shoping done in Spring Season ')
-    st.markdown(':red[Pie of Categories oF Shopping]')
+    st.markdown(':red[Pie-chart of Categories oF Shopping]')
     st.markdown('Highest shoping Category is Clothing ')
-    st.markdown(':red[Donut Chat of Subscription Status]')
+    st.markdown(':red[Donut Chart of Subscription Status]')
     st.markdown('only 27% have Subscription ')
     st.markdown(':red[Size Bought by Different Age Groups]')
     st.markdown('Size M were Bought by Peoples')
