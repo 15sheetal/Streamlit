@@ -1,0 +1,6 @@
+streamlit
+plotly.express
+plotly
+cufflinks
+streamlit_option_menu
+pandas
