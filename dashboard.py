@@ -21,6 +21,22 @@ if selected=="Data":
     st.subheader("Data")
     df=pd.read_csv('shopping_behavior_updated (1).csv')
     df
+    if st.checkbox('Filter'):
+      if st.checkbox('Category'):
+            Category_filter = st.selectbox('Category', df['Category'].unique())
+            Item_filter = st.selectbox('Item Purchased', df['Item Purchased'].unique())
+            f_df = df[(df['Category'] == Category_filter) & (df['Item Purchased'] == Item_filter)]
+            f_df
+      if st.checkbox('Location'):
+            Location_filter = st.selectbox('Location', df['Location'].unique())
+            Cat_filter = st.selectbox('Category', df['Category'].unique())
+            f_df = df[(df['Location'] == Location_filter) & (df['Category'] == Cat_filter)]
+            f_df
+      if st.checkbox('Gender'):
+            Gender_filter = st.selectbox('Gender', df['Gender'].unique())
+            Item_filter = st.selectbox('Item Purchased', df['Item Purchased'].unique())
+            f_df = df[(df['Gender'] == Gender_filter) & (df['Item Purchased'] == Item_filter)]
+            f_df
 if selected=="Charts":
     col1,col2=st.columns(2)
     with col1:
