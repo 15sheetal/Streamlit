@@ -24,8 +24,8 @@ if selected=="Data":
     df
     if st.checkbox('Filter'):
       if st.checkbox('Category'):
-            Category_filter = st.selectbox('Category', df['Category'].unique())
-            Item_filter = st.selectbox('Item Purchased', df['Item Purchased'].unique())
+            Category_filter = st.selectbox('Category', df['Category'])
+            Item_filter = st.selectbox('Item Purchased', df['Item Purchased'])
             f_df = df[(df['Category'] == Category_filter) & (df['Item Purchased'] == Item_filter)]
             f_df
       if st.checkbox('Location'):
