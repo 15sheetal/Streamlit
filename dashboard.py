@@ -38,6 +38,11 @@ if selected=="Data":
             Item_filter = st.selectbox('Item Purchased', df['Item Purchased'].unique())
             f_df = df[(df['Gender'] == Gender_filter) & (df['Item Purchased'] == Item_filter)]
             f_df
+      if st.checkbox('Season'):
+            Season_filter = st.selectbox('Season', df['Season'].unique())
+            Item_filter = st.selectbox('Item Purchased', df['Item Purchased'].unique())
+            f_df = df[(df['Season'] == Season_filter) & (df['Item Purchased'] == Item_filter)]
+            f_df
 if selected=="Charts":
     col1,col2=st.columns(2)
     with col1:
