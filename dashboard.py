@@ -62,8 +62,8 @@ if selected=="Charts":
         fig2 = px.pie(df, names='Subscription Status',width=300,hole=0.5,color_discrete_sequence=px.colors.qualitative.Set2)
         st.plotly_chart(fig2)
     with col2:
-       st.subheader(':green[Size Bought by Different Age Groups]')
-       fig = px.bar(df, x='Size', y='Age',
+       st.subheader(':green[Size Bought by Different Gender]')
+       fig = px.bar(df, x='Size', y='Purchase Amount (USD)',
                  color='Gender',width=400)
        st.plotly_chart(fig)
      
