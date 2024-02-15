@@ -18,6 +18,7 @@ with st.sidebar:
 if selected=="Data":
     st.subheader("Description")
     st.markdown('The Consumer Behavior and Shopping Habits Dataset is a robust collection of consumer information crucial for market analysis and tailored marketing strategies. It covers Customer IDs for identification, Age and Gender for demographics, and Purchase Amount in USD for transaction value. Details like Item Purchased, Category, and Location provide insights into product preferences and regional trends. Size, Color, and Season data cater to specific consumer choices.')
+    st.divider()
     st.subheader("Data")
     df=pd.read_csv('shopping_behavior_updated (1).csv')
     df
