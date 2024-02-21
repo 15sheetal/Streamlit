@@ -53,7 +53,7 @@ if selected=="Charts":
         st.subheader(':green[Bar-Chart of Shopping Season]')
         fig7 = px.bar(data_frame=df, x=df['Season'],
         y=df['Purchase Amount (USD)'],
-            color_discrete_sequence=px.colors.qualitative.Antique,width=350)
+            color_discrete_sequence=px.colors.qualitative.Antique,width=300)
         st.plotly_chart(fig7, use_container_width=True)
     with col2:
         st.subheader(':green[Pie-chart of Categories of Shopping]')
@@ -79,7 +79,7 @@ if selected=="Charts":
             st.subheader(':green[Bar-Chart of Shopping Season]')
             fig7 = px.bar(data_frame=c, x=c['Season'],
             y=c['Purchase Amount (USD)'],
-            color_discrete_sequence=px.colors.qualitative.Antique,width=350)
+            color_discrete_sequence=px.colors.qualitative.Antique,width=300)
             st.plotly_chart(fig7, use_container_width=True)
         with col2:
             st.subheader(':green[Pie-chart of Categories of Shopping]')
@@ -114,7 +114,7 @@ if selected=="Bar2":
        st.plotly_chart(fig6, use_container_width=True)
 if selected=="Conclusion":
     st.markdown('📈:red[Bar-Chart of Shopping Season]')
-    st.markdown('Highest shoping done in Spring Season ')
+    st.markdown('Highest shoping done in Fall Season ')
     st.markdown('📈:red[Pie-chart of Categories oF Shopping]')
     st.markdown('Highest shoping Category is Clothing ')
     st.markdown('📈:red[Donut Chart of Subscription Status]')
@@ -124,5 +124,4 @@ if selected=="Conclusion":
     st.markdown('📈:red[Payment Method of Male/Female]')
     st.markdown('Mostly Males pay by cash and Females pay by paypal')
     st.markdown('📈:red[Item Purchase in Perticular Location]')
-    st.subheader(':green[Item Purchase in Perticular Location]')
     
