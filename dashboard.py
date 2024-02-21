@@ -119,7 +119,7 @@ if selected=="Conclusion":
     st.markdown('Highest shoping Category is Clothing ')
     st.markdown('📈:red[Donut Chart of Subscription Status]')
     st.markdown('only 27% have Subscription ')
-    st.markdown('📈:red[Size Bought by Different Age Groups]')
+    st.markdown('📈:red[Size Bought by Different Gender]')
     st.markdown('Size M were Bought by Peoples')
     st.markdown('📈:red[Payment Method of Male/Female]')
     st.markdown('Mostly Males pay by cash and Females pay by paypal')
