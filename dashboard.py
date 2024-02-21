@@ -53,7 +53,7 @@ if selected=="Charts":
         st.subheader(':green[Bar-Chart of Shopping Season]')
         fig7 = px.bar(data_frame=df, x=df['Season'],
         y=df['Purchase Amount (USD)'],
-            color_discrete_sequence=px.colors.qualitative.Antique,width=300)
+            color_discrete_sequence=px.colors.qualitative.Antique,width=200)
         st.plotly_chart(fig7, use_container_width=True)
     with col2:
         st.subheader(':green[Donut Chart of Subscription Status]')
