@@ -68,7 +68,7 @@ if selected=="Charts":
     with col2:
          st.subheader(':green[Size Bought by Different Gender]')
          fig = px.bar(df, x='Size', y='Purchase Amount (USD)',
-              color='Gender',barmode='group',color_discrete_sequence=px.colors.qualitative.Set2,width=400)
+              color='Gender',barmode='group',width=400)
          st.plotly_chart(fig)
        
     if st.checkbox('Location'): 
@@ -94,7 +94,7 @@ if selected=="Charts":
         with col2:
             st.subheader(':green[Size Bought by Different Gender]')
             fig = px.bar(c, x='Size', y='Purchase Amount (USD)',
-              color='Gender',barmode='group',color_discrete_sequence=px.colors.qualitative.Set2,width=400)
+              color='Gender',barmode='group',width=400)
             st.plotly_chart(fig)
        
 if selected=="Bar1":   
