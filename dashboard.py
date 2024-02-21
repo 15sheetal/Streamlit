@@ -48,26 +48,49 @@ if selected=="Data":
             f_df = df[(df['Frequency of Purchases'] == FreqPurchases)]
             f_df
 if selected=="Charts":
-    selected_Location = st.selectbox("Location", df['Location'].unique())
-    c= df[df['Location'] == selected_Location][['Purchase Amount (USD)','Item Purchased','Gender','Category','Size','Season','Subscription Status']]
-    col1,col2=st.columns(2)
+     col1,col2=st.columns(2)
     with col1:
         st.subheader(':green[Bar-Chart of Shopping Season]')
-        fig7 = px.bar(data_frame=c, x=c['Season'],
-            y=c['Purchase Amount (USD)'],
-        color_discrete_sequence=px.colors.qualitative.Antique,width=350)
+        fig7 = px.bar(data_frame=df, x=df['Season'].value_counts().index,
+       y=df['Category'].value_counts().values,
+       color_discrete_sequence=px.colors.qualitative.Antique,width=350)
         st.plotly_chart(fig7, use_container_width=True)
     with col2:
         st.subheader(':green[Pie-chart of Categories of Shopping]')
-        fig1 = px.pie(names=c['Category'].value_counts().index, values=c['Category'].value_counts().values,
+        fig1 = px.pie(names=df['Category'].value_counts().index, values=df['Category'].value_counts().values,
                        color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
         st.plotly_chart(fig1, use_container_width=True)
     col1,col2=st.columns(2)
     with col1:
         st.subheader(':green[Donut Chart of Subscription Status]')
-        fig2 = px.pie(c, names='Subscription Status',width=300,hole=0.5,color_discrete_sequence=px.colors.qualitative.Set2)
+        fig2 = px.pie(df, names='Subscription Status',width=300,hole=0.5,color_discrete_sequence=px.colors.qualitative.Set2)
         st.plotly_chart(fig2)
     with col2:
+       st.subheader(':green[Size Bought by Different Gender]')
+       fig = px.bar(df, x='Size', y='Purchase Amount (USD)',
+                 color='Gender',width=400)
+       st.plotly_chart(fig)
+    if st.checkbox('Location'):   
+        selected_Location = st.selectbox("Location", df['Location'].unique())
+        c= df[df['Location'] == selected_Location][['Purchase Amount (USD)','Item Purchased','Gender','Category','Size','Season','Subscription Status']]
+        col1,col2=st.columns(2)
+        with col1:
+        st.subheader(':green[Bar-Chart of Shopping Season]')
+        fig7 = px.bar(data_frame=c, x=c['Season'],
+            y=c['Purchase Amount (USD)'],
+        color_discrete_sequence=px.colors.qualitative.Antique,width=350)
+        st.plotly_chart(fig7, use_container_width=True)
+        with col2:
+        st.subheader(':green[Pie-chart of Categories of Shopping]')
+        fig1 = px.pie(names=c['Category'].value_counts().index, values=c['Category'].value_counts().values,
+                       color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
+        st.plotly_chart(fig1, use_container_width=True)
+        col1,col2=st.columns(2)
+        with col1:
+        st.subheader(':green[Donut Chart of Subscription Status]')
+        fig2 = px.pie(c, names='Subscription Status',width=300,hole=0.5,color_discrete_sequence=px.colors.qualitative.Set2)
+        st.plotly_chart(fig2)
+        with col2:
         st.subheader(':green[Size Bought by Different Gender]')
         fig = px.bar(c, x='Size', y='Purchase Amount (USD)',
                  color='Gender',width=400)
@@ -101,28 +124,4 @@ if selected=="Conclusion":
     st.markdown('Mostly Males pay by cash and Females pay by paypal')
     st.markdown('📈:red[Item Purchase in Perticular Location]')
     st.subheader(':green[Item Purchase in Perticular Location]')
-    selected_Location = st.selectbox("Location", df['Location'].unique())
-    c= df[df['Location'] == selected_Location][['Purchase Amount (USD)','Item Purchased','Gender','Category','Size','Season','Subscription Status']]
-    col1,col2=st.columns(2)
-    with col1:
-        st.subheader(':green[Bar-Chart of Shopping Season]')
-        fig7 = px.bar(data_frame=c, x=c['Season'],
-            y=c['Purchase Amount (USD)'],
-        color_discrete_sequence=px.colors.qualitative.Antique,width=350)
-        st.plotly_chart(fig7, use_container_width=True)
-    with col2:
-        st.subheader(':green[Pie-chart of Categories of Shopping]')
-        fig1 = px.pie(names=c['Category'].value_counts().index, values=c['Category'].value_counts().values,
-                       color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
-        st.plotly_chart(fig1, use_container_width=True)
-    col1,col2=st.columns(2)
-    with col1:
-        st.subheader(':green[Donut Chart of Subscription Status]')
-        fig2 = px.pie(c, names='Subscription Status',width=300,hole=0.5,color_discrete_sequence=px.colors.qualitative.Set2)
-        st.plotly_chart(fig2)
-    with col2:
-        st.subheader(':green[Size Bought by Different Gender]')
-        fig = px.bar(c, x='Size', y='Purchase Amount (USD)',
-                 color='Gender',width=400)
-        st.plotly_chart(fig)
-       
+    
