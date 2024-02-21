@@ -49,13 +49,13 @@ if selected=="Data":
             f_df
 if selected=="Charts":
     col1,col2=st.columns(2)
-     with col1:
+    with col1:
         st.subheader(':green[Bar-Chart of Shopping Season]')
         fig7 = px.bar(data_frame=df, x=df['Season'].value_counts().index,
-       y=df['Category'].value_counts().values,
-       color_discrete_sequence=px.colors.qualitative.Antique,width=350)
+        y=df['Category'].value_counts().values,
+        color_discrete_sequence=px.colors.qualitative.Antique,width=350)
         st.plotly_chart(fig7, use_container_width=True)
-     with col2:
+    with col2:
         st.subheader(':green[Pie-chart of Categories of Shopping]')
         fig1 = px.pie(names=df['Category'].value_counts().index, values=df['Category'].value_counts().values,
                        color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
