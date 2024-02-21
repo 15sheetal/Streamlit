@@ -58,7 +58,7 @@ if selected=="Charts":
     with col2:
         st.subheader(':green[Pie-chart of Categories of Shopping]')
         fig1 = px.pie(names=df['Category'].value_counts().index, values=df['Category'].value_counts().values,
-                       color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
+                       color_discrete_sequence=px.colors.qualitative.Pastel,width=300)
         st.plotly_chart(fig1, use_container_width=True)
     col1,col2=st.columns(2)
     with col1:
@@ -66,10 +66,11 @@ if selected=="Charts":
         fig2 = px.pie(df, names='Subscription Status',width=300,hole=0.5,color_discrete_sequence=px.colors.qualitative.Set2)
         st.plotly_chart(fig2)
     with col2:
-        st.subheader(':green[Size Bought by Different Gender]')
-        fig = px.bar(df, x='Size', y='Purchase Amount (USD)',
-                 color='Gender',width=400)
-        st.plotly_chart(fig)
+         st.subheader(':green[Size Bought by Different Gender]')
+            fig = px.bar(df, x='Size', y='Purchase Amount (USD)',
+              color='Gender',barmode='group',color_discrete_sequence=px.colors.qualitative.Set2,width=400)
+         st.plotly_chart(fig)
+       
     if st.checkbox('Location'): 
         selected_Location = st.selectbox("Location", df['Location'].unique())
         c= df[df['Location'] == selected_Location][['Purchase Amount (USD)','Item Purchased','Gender','Category','Size','Season','Subscription Status']]
@@ -83,7 +84,7 @@ if selected=="Charts":
         with col2:
             st.subheader(':green[Pie-chart of Categories of Shopping]')
             fig1 = px.pie(names=c['Category'].value_counts().index, values=c['Category'].value_counts().values,
-                       color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
+                       color_discrete_sequence=px.colors.qualitative.Pastel,width=300)
             st.plotly_chart(fig1, use_container_width=True)
         col1,col2=st.columns(2)
         with col1:
@@ -93,7 +94,7 @@ if selected=="Charts":
         with col2:
             st.subheader(':green[Size Bought by Different Gender]')
             fig = px.bar(c, x='Size', y='Purchase Amount (USD)',
-              color='Gender',barmode='group',width=400)
+              color='Gender',barmode='group',color_discrete_sequence=px.colors.qualitative.Set2,width=400)
             st.plotly_chart(fig)
        
 if selected=="Bar1":   
