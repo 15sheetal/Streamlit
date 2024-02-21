@@ -58,7 +58,7 @@ if selected=="Charts":
     with col2:
         st.subheader(':green[Pie-chart of Categories of Shopping]')
         fig1 = px.pie(names=df['Category'].value_counts().index, values=df['Category'].value_counts().values,
-                       color_discrete_sequence=px.colors.qualitative.Pastel,width=300)
+                       color_discrete_sequence=px.colors.qualitative.Pastel,width=250)
         st.plotly_chart(fig1, use_container_width=True)
     col1,col2=st.columns(2)
     with col1:
@@ -79,7 +79,7 @@ if selected=="Charts":
             st.subheader(':green[Bar-Chart of Shopping Season]')
             fig7 = px.bar(data_frame=c, x=c['Season'],
             y=c['Purchase Amount (USD)'],
-            color_discrete_sequence=px.colors.qualitative.Antique,width=300)
+            color_discrete_sequence=px.colors.qualitative.Antique,width=250)
             st.plotly_chart(fig7, use_container_width=True)
         with col2:
             st.subheader(':green[Pie-chart of Categories of Shopping]')
