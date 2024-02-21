@@ -93,7 +93,7 @@ if selected=="Charts":
         with col2:
             st.subheader(':green[Size Bought by Different Gender]')
             fig = px.bar(c, x='Size', y='Purchase Amount (USD)',
-              color='Gender',facet_col='Gender',facet_row='Size',barmode='group',width=400)
+              color='Gender',barmode='group',width=400)
             st.plotly_chart(fig)
        
 if selected=="Bar1":   
