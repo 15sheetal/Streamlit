@@ -85,7 +85,7 @@ if selected=="Charts":
             fig1 = px.pie(names=c['Category'].value_counts().index, values=c['Category'].value_counts().values,
                        color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
             st.plotly_chart(fig1, use_container_width=True)
-            col1,col2=st.columns(2)
+        col1,col2=st.columns(2)
         with col1:
             st.subheader(':green[Donut Chart of Subscription Status]')
             fig2 = px.pie(c, names='Subscription Status',width=300,hole=0.5,color_discrete_sequence=px.colors.qualitative.Set2)
