@@ -105,13 +105,13 @@ if selected=="Conclusion":
     col1,col2=st.columns(2)
     with col1:
         st.subheader(':green[Bar-Chart of Shopping Season]')
-        fig7 = px.bar(data_frame=c, x=df['Season'],
-            y=df['Purchase Amount (USD)'],
+        fig7 = px.bar(data_frame=c, x=c['Season'],
+            y=c['Purchase Amount (USD)'],
         color_discrete_sequence=px.colors.qualitative.Antique,width=350)
         st.plotly_chart(fig7, use_container_width=True)
     with col2:
         st.subheader(':green[Pie-chart of Categories of Shopping]')
-        fig1 = px.pie(c,names=df['Category'].value_counts().index, values=df['Category'].value_counts().values,
+        fig1 = px.pie(names=c['Category'].value_counts().index, values=df['Category'].value_counts().values,
                        color_discrete_sequence=px.colors.qualitative.Pastel,width=350)
         st.plotly_chart(fig1, use_container_width=True)
     col1,col2=st.columns(2)
