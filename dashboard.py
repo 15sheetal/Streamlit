@@ -29,18 +29,23 @@ if selected=="Data":
             f_df
       if st.checkbox('Location'):
             Location_filter = st.selectbox('Location', df['Location'].unique())
-            Cat_filter = st.selectbox('Category', df['Category'].unique())
-            f_df = df[(df['Location'] == Location_filter) & (df['Category'] == Cat_filter)]
+            f_df = df[(df['Location'] == Location_filter) ]
             f_df
       if st.checkbox('Gender'):
             Gender_filter = st.selectbox('Gender', df['Gender'].unique())
-            Item_filter = st.selectbox('Item Purchased', df['Item Purchased'].unique())
-            f_df = df[(df['Gender'] == Gender_filter) & (df['Item Purchased'] == Item_filter)]
+            f_df = df[(df['Gender'] == Gender_filter)]
             f_df
       if st.checkbox('Season'):
             Season_filter = st.selectbox('Season', df['Season'].unique())
-            Item_filter = st.selectbox('Item Purchased', df['Item Purchased'].unique())
-            f_df = df[(df['Season'] == Season_filter) & (df['Item Purchased'] == Item_filter)]
+            f_df = df[(df['Season'] == Season_filter)]
+            f_df
+      if st.checkbox('Payment Method'):
+            Payment Method_filter = st.selectbox('Payment Method', df['Payment Method'].unique())
+            f_df = df[(df['Payment Method'] == Payment Method)]
+            f_df
+       if st.checkbox('Frequency of Purchases'):
+            Frequency of Purchases_filter = st.selectbox('Frequency of Purchases', df['Frequency of Purchases'].unique())
+            f_df = df[(df['Frequency of Purchases'] == Frequency of Purchases)]
             f_df
 if selected=="Charts":
     col1,col2=st.columns(2)
