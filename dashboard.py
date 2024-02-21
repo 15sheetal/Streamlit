@@ -48,7 +48,7 @@ if selected=="Data":
             f_df = df[(df['Frequency of Purchases'] == FreqPurchases)]
             f_df
 if selected=="Charts":
-     col1,col2=st.columns(2)
+    col1,col2=st.columns(2)
      with col1:
         st.subheader(':green[Bar-Chart of Shopping Season]')
         fig7 = px.bar(data_frame=df, x=df['Season'].value_counts().index,
