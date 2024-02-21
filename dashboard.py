@@ -106,7 +106,7 @@ if selected=="Conclusion":
     with col1:
         st.subheader(':green[Bar-Chart of Shopping Season]')
         fig7 = px.bar(data_frame=c, x=df['Season'],
-            y=df['Purchase Amount (USD)'.value_counts().values],
+            y=df['Purchase Amount (USD)'].value_counts().values,
         color_discrete_sequence=px.colors.qualitative.Antique,width=350)
         st.plotly_chart(fig7, use_container_width=True)
     with col2:
