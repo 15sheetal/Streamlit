@@ -40,12 +40,12 @@ if selected=="Data":
             f_df = df[(df['Season'] == Season_filter)]
             f_df
       if st.checkbox('Payment Method'):
-            Payment Method_filter = st.selectbox('Payment Method', df['Payment Method'].unique())
-            f_df = df[(df['Payment Method'] == Payment Method)]
+            PaymentMethod_filter = st.selectbox('Payment Method', df['Payment Method'].unique())
+            f_df = df[(df['Payment Method'] == PaymentMethod_filter)]
             f_df
        if st.checkbox('Frequency of Purchases'):
-            Frequency of Purchases_filter = st.selectbox('Frequency of Purchases', df['Frequency of Purchases'].unique())
-            f_df = df[(df['Frequency of Purchases'] == Frequency of Purchases)]
+            FreqPurchases_filter = st.selectbox('Frequency of Purchases', df['Frequency of Purchases'].unique())
+            f_df = df[(df['Frequency of Purchases'] == FreqPurchases)]
             f_df
 if selected=="Charts":
     col1,col2=st.columns(2)
